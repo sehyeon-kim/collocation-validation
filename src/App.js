@@ -7,6 +7,7 @@ import Bye from './components/Bye'
 import Auth from './components/Auth'
 import Box from './components/Box'
 import Collocation from './components/Collocation';
+import Init from './components/Init'
 
 import {
   BrowserRouter,
@@ -19,6 +20,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+        <Route path="/" element={<Init />} />
         <Route path="/:collSize/:startID/:writeID" element={<Home />} />
         <Route path="/example/:collSize/:startID/:writeCol" element={<Example />} />
         <Route path="/validation/:collSize/:startID/:writeCol/:index" element={<Validation />} />
