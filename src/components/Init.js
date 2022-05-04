@@ -7,13 +7,14 @@ import { useParams } from "react-router-dom";
 export default function Init() {
 
   const params = useParams()
+  const navigate = useNavigate()
 
   const [collSize, setCollSize] = useState();
   const [startID, setStartID] = useState();
   const [writeID, setWriteID] = useState();
 
   const submit = () => {
-    useNavigate(`/${collSize}/${startID}/${writeID}`)
+    navigate(`/${collSize}/${startID}/${writeID}`)
   }
   
   return (
