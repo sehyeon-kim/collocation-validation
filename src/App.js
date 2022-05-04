@@ -20,12 +20,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-        <Route path="/" element={<Init />} />
-        <Route path="/:collSize/:startID/:writeID" element={<Home />} />
-        <Route path="/example/:collSize/:startID/:writeCol" element={<Example />} />
-        <Route path="/validation/:collSize/:startID/:writeCol/:index" element={<Validation />} />
-        <Route path="/bye" element={<Bye />} />
-        <Route path="/auth" element={<Auth />} />
+          <Route path="/" element={<Init />} />
+          <Route path="/:collSize/:startID/:writeID" element={<Home />} />
+          <Route path="/example/:collSize/:startID/:writeCol" element={<Example />} />
+          <Route path="/validation/:collSize/:startID/:writeCol/:index" element={<Validation />} />
+          <Route path="/bye" element={<Bye />} />
+          <Route path="/auth" element={<Auth />} />
         </Routes>
       </BrowserRouter>
     </div>

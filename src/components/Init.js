@@ -1,12 +1,9 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 
 export default function Init() {
 
-  const params = useParams()
   const navigate = useNavigate()
 
   const [collSize, setCollSize] = useState();
@@ -20,11 +17,24 @@ export default function Init() {
   return (
     <div>
       <h1>Welcome!</h1>
-      <input value={collSize} onChange={(e) => setCollSize(e.target.value)}>Number of collocations</input>
-      <input value={startID} onChange={(e) => setStartID(e.target.value)}>startID</input>
-      <input value={writeID} onChange={(e) => setWriteID(e.target.value)}>writeID</input>
-
+      <span>
+        Number of collocations 
+      </span>
+      <input type="text" value={collSize} onChange={(e) => setCollSize(e.target.value)} />
+      <br />
+      <span>
+        startID
+      </span>
+      <input type="text" value={startID} onChange={(e) => setStartID(e.target.value)} />
+      <br />
+      <span>
+        writeID
+      </span>
+      <input type="text" value={writeID} onChange={(e) => setWriteID(e.target.value)} />
+      <br />
+      <br />
       <button onClick={() => submit()}>submit</button>
+      
     </div>
   )
 }
