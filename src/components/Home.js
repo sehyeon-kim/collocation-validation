@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 // importing Link from react-router-dom to navigate to
 // different end points.
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Auth from "./Auth"
  
 const Home = () => {
 
   const params = useParams()
+  const navigate = useNavigate()
 
   const [authorized, setAuthorized] = useState(false);
   const [collSize, setCollSize] = useState();
@@ -37,6 +38,7 @@ const Home = () => {
         {
           (!authorized) &&
           <>
+             {/* <button onClick={() => navigate('/auth', {state: {collSize: params.collSize, startID: params.startID, writeID: params.writeID}})}> Go to Authorize </button> */}
             <Auth setAuthorized={setAuthorized} authorized={authorized}/>
           </>
         }

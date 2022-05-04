@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
-export default function Auth({authorized, setAuthorized}) {
+export default function Auth({setAuthorized, collSize, startID, writeID}) {
 
   const [tokenClient, setTokenClient] = useState();
   const [gapiInited, setGapiInited] = useState(false);
   const [gisInited, setGisInited] = useState(false);
+  // const [auth, setAuth] = useState(false);
 
   const google = window.google
   const gapi = window.gapi
@@ -94,6 +95,7 @@ export default function Auth({authorized, setAuthorized}) {
         throw (resp);
       }
       setAuthorized(true)
+      // setAuth(true)
       // document.getElementById('signout_button').style.visibility = 'visible';
       // document.getElementById('authorize_button').innerText = 'Refresh';
       // await listMajors();
@@ -157,6 +159,7 @@ export default function Auth({authorized, setAuthorized}) {
     gisLoaded()
   }, [])
 
+
   return (
     // (gapiInited && gisInited) &&
     <div>
@@ -165,7 +168,6 @@ export default function Auth({authorized, setAuthorized}) {
 
 
         <button id="authorize_button" onClick={() =>handleAuthClick()}>Authorize</button>
-
 
         <script async defer src="https://apis.google.com/js/api.js" onLoad={() => gapiLoaded()}></script>
         <script async defer src="https://accounts.google.com/gsi/client" onLoad={()=>gisLoaded()}></script>

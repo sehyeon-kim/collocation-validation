@@ -18,7 +18,7 @@ export default function Init() {
     <div>
       <h1>Welcome!</h1>
       <span>
-        Number of collocations 
+        Number of collocations  
       </span>
       <input type="text" value={collSize} onChange={(e) => setCollSize(e.target.value)} />
       <br />
