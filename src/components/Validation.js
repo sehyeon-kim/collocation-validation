@@ -14,6 +14,7 @@ export default function Validation() {
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState([])
   const [updated, setUpdated] = useState(false);
+  const [writed, setWrited] = useState(false);
   // const [errorID, setErrorID] = useState();
 
   const navigate = useNavigate()
@@ -133,6 +134,15 @@ export default function Validation() {
       var result = response.result;
       console.log(result);
       console.log(`${result.updatedCells} cells updated.`);
+      setWrited(true)
+      if (index+1 >= collArr.length) {
+        alert("Completed! Thank you!")
+        navigate('/bye')
+        // setErrorID(collArr[0].errorID)
+        return
+      }
+      setIndex(index + 1)
+      navigate(`/validation/${params.collSize}/${params.startID}/${params.writeCol}/${index+1}`,{state:{content: collArr[index], answers: answers, setAnswers: setAnswers}})
     });
   }
 
@@ -160,15 +170,17 @@ export default function Validation() {
       return
     }
     initClientWrite(content.errorID)
-    if (index+1 >= collArr.length) {
-      alert("Completed! Thank you!")
-      navigate('/bye')
-      // setErrorID(collArr[0].errorID)
-      return
-    }
+    // if (index+1 >= collArr.length) {
+    //   alert("Completed! Thank you!")
+    //   navigate('/bye')
+    //   // setErrorID(collArr[0].errorID)
+    //   return
+    // }
     // setErrorID(collArr[index+1].errorID)
-    setIndex(index + 1)
-    navigate(`/validation/${params.collSize}/${params.startID}/${params.writeCol}/${index+1}`,{state:{content: collArr[index], answers: answers, setAnswers: setAnswers}})
+    // if (writed) {
+    // setIndex(index + 1)
+    // navigate(`/validation/${params.collSize}/${params.startID}/${params.writeCol}/${index+1}`,{state:{content: collArr[index], answers: answers, setAnswers: setAnswers}})
+    // }
   }
   
   return(
