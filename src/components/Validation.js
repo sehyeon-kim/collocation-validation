@@ -142,7 +142,7 @@ export default function Validation() {
         return
       }
       setIndex(index + 1)
-      navigate(`/validation/${params.collSize}/${params.startID}/${params.writeCol}/${index+1}`,{state:{content: collArr[index], answers: answers, setAnswers: setAnswers}})
+      // navigate(`/validation/${params.collSize}/${params.startID}/${params.writeCol}/${index+1}`,{state:{content: collArr[index], answers: answers, setAnswers: setAnswers}})
     }, function(reason){
       console.log(reason.result)
     });
