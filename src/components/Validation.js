@@ -130,7 +130,7 @@ export default function Validation() {
        range: `samplesheet!${params.writeCol.split(",")[0]}${parseInt(errorID)+1}:${params.writeCol.split(",")[1]}${parseInt(errorID)+1}`,
        valueInputOption: "RAW",
        resource: body
-    }).then((response) => {
+    }).then(function(response){
       var result = response.result;
       console.log(result);
       console.log(`${result.updatedCells} cells updated.`);
@@ -143,6 +143,8 @@ export default function Validation() {
       }
       setIndex(index + 1)
       navigate(`/validation/${params.collSize}/${params.startID}/${params.writeCol}/${index+1}`,{state:{content: collArr[index], answers: answers, setAnswers: setAnswers}})
+    }, function(reason){
+      console.log(reason.result)
     });
   }
 
