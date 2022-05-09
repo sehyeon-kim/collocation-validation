@@ -88,6 +88,18 @@ export default function Validation() {
     })
   }
 
+  function initClientWrite(errorID) {
+    window.gapi.client.init({
+      apiKey: config.apiKey,
+      clientId: config.clientId,
+      discoveryDocs: config.discoveryDocs,
+      scope: config.scope
+    })
+    .then( () => {
+      writeCells(errorID)
+    })
+  }
+
   function writeCells(errorID) {
     console.log(errorID)
     const cp = [...answers]
@@ -124,6 +136,8 @@ export default function Validation() {
     });
   }
 
+
+
   useEffect(() => {
     setIndex(parseInt(params.index))
     window.gapi.load('client:auth2', initClientGet);
@@ -145,7 +159,7 @@ export default function Validation() {
       alert("Some options are not selected.")
       return
     }
-    writeCells(content.errorID)
+    initClientWrite(content.errorID)
     if (index+1 >= collArr.length) {
       alert("Completed! Thank you!")
       navigate('/bye')
