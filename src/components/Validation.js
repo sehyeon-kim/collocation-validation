@@ -171,7 +171,7 @@ export default function Validation() {
       alert("Some options are not selected.")
       return
     }
-    initClientWrite(content.errorID)
+    writeCells(content.errorID)
     // if (index+1 >= collArr.length) {
     //   alert("Completed! Thank you!")
     //   navigate('/bye')
