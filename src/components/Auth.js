@@ -26,7 +26,7 @@ export default function Auth({setAuthorized, collSize, startID, writeID}) {
 
   // Authorization scopes required by the API; multiple scopes can be
   // included, separated by spaces.
-  const SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
+  const SCOPES = "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets";
 
   // let tokenClient;
   // let gapiInited = false;

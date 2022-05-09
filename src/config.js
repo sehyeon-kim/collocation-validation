@@ -4,5 +4,5 @@ export default {
   discoveryDocs: 
     ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
   spreadsheetId: "14yuBKRJ27rerNAaAM_shiXd6rT3N2NSIsS2CrnpWAGo",
-  scope: "https://www.googleapis.com/auth/spreadsheets"
+  scope: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets"
 };

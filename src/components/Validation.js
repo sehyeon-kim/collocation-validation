@@ -81,7 +81,7 @@ export default function Validation() {
       apiKey: config.apiKey,
       clientId: config.clientId,
       discoveryDocs: config.discoveryDocs,
-      scope: "https://www.googleapis.com/auth/spreadsheets"
+      scope:"https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets"
     })
     .then( () => {
       getColls()
@@ -93,7 +93,7 @@ export default function Validation() {
       apiKey: config.apiKey,
       clientId: config.clientId,
       discoveryDocs: config.discoveryDocs,
-      scope: "https://www.googleapis.com/auth/spreadsheets"
+      scope: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets"
     })
     .then( () => {
       writeCells(errorID)
