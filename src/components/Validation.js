@@ -142,6 +142,7 @@ export default function Validation() {
         return
       }
       setIndex(index + 1)
+      localStorage.setItem('index', parseInt(index)+1);
       // navigate(`/validation/${params.collSize}/${params.startID}/${params.writeCol}/${index+1}`,{state:{content: collArr[index], answers: answers, setAnswers: setAnswers}})
     }, function(reason){
       console.log(reason.result)
@@ -151,7 +152,8 @@ export default function Validation() {
 
 
   useEffect(() => {
-    setIndex(parseInt(params.index))
+    // setIndex(parseInt(params.index))
+    localStorage.getItem('index') ? setIndex(parseInt(localStorage.getItem('index'))) : setIndex(0) 
     window.gapi.load('client:auth2', initClientGet);
   }, [])
 

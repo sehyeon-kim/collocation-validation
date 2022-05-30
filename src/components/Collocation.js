@@ -77,7 +77,7 @@ export default function Collocation({content, answers, setAnswers}) {
           })
         }
         </div>
-        { 
+        {
           candArr.map((cand, i) => 
             <Box key={i} errorID={content.errorID} text={cand} answers={answers} setAnswers={setAnswers} />)
         }
